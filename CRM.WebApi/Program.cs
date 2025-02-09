@@ -3,6 +3,7 @@ using CRM.Application.Interfaces;
 using CRM.Persistence;
 using System.Reflection;
 using CRM.Application;
+using CRM.WebApi.Middleware;
 
 namespace CRM.WebApi
 {
@@ -66,6 +67,7 @@ namespace CRM.WebApi
                             app.UseDeveloperExceptionPage();
                         }
 
+                        app.UseCustomExceptionHandler();
                         app.UseRouting();
                         app.UseHttpsRedirection();
                         app.UseCors("AllowAll");
